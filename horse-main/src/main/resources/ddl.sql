@@ -6,18 +6,18 @@ create table horse_nft(
                           speed int,
                           lucky int,
                           breeding_times timestamp,
-                          owner varchar(40),
-                          equipment varchar(40),
+                          owner varchar(300),
+                          equipment varchar(300),
                           PRIMARY KEY ( `algebra` )
 )
     ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table blind_box(
                           algebra int,
-                          transaction_hash varchar(40),
+                          transaction_hash varchar(300),
                           transaction_time timestamp,
-                          buyer varchar(40),
-                          price DECIMAL,
+                          buyer varchar(300),
+                          price double,
                           sell_round int,
                           PRIMARY KEY ( `algebra` )
 )

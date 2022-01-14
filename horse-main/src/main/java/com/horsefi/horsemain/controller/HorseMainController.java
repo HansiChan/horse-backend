@@ -5,9 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.horsefi.horsemain.entity.BlindBox;
 import com.horsefi.horsemain.entity.ResponseEntity;
-import com.horsefi.horsemain.service.impl.BlindBoxImpl;
 import com.horsefi.horsemain.service.impl.HorseMainImpl;
-import com.horsefi.horsemain.service.impl.NftImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +18,11 @@ import org.springframework.web.bind.annotation.*;
 public class HorseMainController {
 
     private final HorseMainImpl horseMainImpl;
-
     private final Gson gson = new Gson();
-
 
     @Autowired
     public HorseMainController(HorseMainImpl horseMainImpl) {
         this.horseMainImpl = horseMainImpl;
-;
     }
 
     @ApiOperation("save transaction")
@@ -37,7 +32,8 @@ public class HorseMainController {
         JsonObject reqJson = JsonParser.parseString(req).getAsJsonObject();
 
         try {
-            BlindBox blindBox = gson.fromJson(reqJson,BlindBox.class);
+            BlindBox blindBox = gson.fromJson(reqJson, BlindBox.class);
+
             horseMainImpl.saveBlindBox(blindBox);
             return gson.toJson(new ResponseEntity(0, "success!"));
         } catch (Exception e) {
