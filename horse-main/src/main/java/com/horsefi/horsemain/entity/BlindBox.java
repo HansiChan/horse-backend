@@ -1,13 +1,11 @@
 package com.horsefi.horsemain.entity;
 
 import org.hibernate.annotations.DynamicUpdate;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.sql.Timestamp;
 
 @DynamicUpdate
 @Entity
@@ -19,7 +17,7 @@ public class BlindBox {
     @Column(name = "transaction_hash")
     private String transaction_hash;
     @Column(name = "transaction_time")
-    private Timestamp transaction_time;
+    private long transaction_time;
     @Column(name = "buyer")
     private String buyer;
     @Column(name = "price")
@@ -43,11 +41,11 @@ public class BlindBox {
         this.transaction_hash = transaction_hash;
     }
 
-    public Timestamp getTransaction_time() {
+    public long getTransaction_time() {
         return transaction_time;
     }
 
-    public void setTransaction_time(Timestamp transaction_time) {
+    public void setTransaction_time(long transaction_time) {
         this.transaction_time = transaction_time;
     }
 

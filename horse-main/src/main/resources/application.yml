@@ -37,7 +37,7 @@ spring:
       matching-strategy: ant_path_matcher
 
 config:
-  root-url: /blindbox_sell/api/v1/
+  root-url: /horse_main/api/v1/
   contract: '0xca07cd5df8dcbdc6a55305e80573f1cdb90acacd'
   transactionUrl: 'https://api-testnet.snowtrace.io/api?module=account&action=tokennfttx&contractaddress=%s&address=%s&page=1&offset=100&sort=asc'
 
