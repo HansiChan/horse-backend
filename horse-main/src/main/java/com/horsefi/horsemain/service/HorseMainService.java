@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface HorseMainService {
 
-    void saveBlindBox(BlindBox blindBox);
+    void saveBlindBox(BlindBox blindBox) throws Exception;
 
     String getNftInfo(String algebra);
 

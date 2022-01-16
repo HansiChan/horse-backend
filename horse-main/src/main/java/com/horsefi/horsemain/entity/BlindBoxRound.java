@@ -37,6 +37,8 @@ public class BlindBoxRound {
     private String rare_rate;
     @Column(name = "normal_rate")
     private String normal_rate;
+    @Column(name = "create_time")
+    private long create_time;
 
     public int getId() {
         return id;

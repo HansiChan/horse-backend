@@ -23,7 +23,7 @@ public class HorseMainImpl implements HorseMainService {
     }
 
     @Override
-    public void saveBlindBox(BlindBox blindBox) {
+    public void saveBlindBox(BlindBox blindBox) throws Exception {
         blindBoxImpl.saveBlindBox(blindBox);
     }
 

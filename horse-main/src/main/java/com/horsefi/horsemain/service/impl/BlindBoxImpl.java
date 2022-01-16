@@ -35,7 +35,7 @@ public class BlindBoxImpl {
         this.restTemplate = builder.build();
     }
 
-    void saveBlindBox(BlindBox blindBox) {
+    void saveBlindBox(BlindBox blindBox) throws Exception {
 
         String url = String.format(apiUrl, contract, blindBox.getBuyer());
         HttpHeaders headers = new HttpHeaders();
@@ -50,6 +50,11 @@ public class BlindBoxImpl {
             if (addressHash.equals(transactionHash)) {
                 blindBox.setAlgebra(transaction.getAsJsonObject().get("tokenID").getAsInt());
             }
+        }
+        if (blindBox.getAlgebra() == 0) {
+            throw new Exception("This transaction:" +
+                    blindBox.getTransaction_hash() +
+                    " does not related to a tokenId,please confirm!");
         }
         blindBoxReposity.save(blindBox);
     }

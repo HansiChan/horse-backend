@@ -42,6 +42,7 @@ create table blind_box_round
     epic_rate      varchar(300),
     rare_rate      varchar(300),
     normal_rate    varchar(300),
+    create_time    long,
     primary key (id)
 )
     ENGINE = InnoDB
