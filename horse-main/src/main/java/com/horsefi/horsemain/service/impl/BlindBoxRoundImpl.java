@@ -9,18 +9,18 @@ import java.util.List;
 
 @Service
 public class BlindBoxRoundImpl {
-    private final BlindBoxRoundRepository blindBoxRoundReposity;
+    private final BlindBoxRoundRepository blindBoxRoundRepository;
 
     @Autowired
-    public BlindBoxRoundImpl(BlindBoxRoundRepository blindBoxRoundReposity) {
-        this.blindBoxRoundReposity = blindBoxRoundReposity;
+    public BlindBoxRoundImpl(BlindBoxRoundRepository blindBoxRoundRepository) {
+        this.blindBoxRoundRepository = blindBoxRoundRepository;
     }
 
     void saveBlindBoxRound(BlindBoxRound blindBoxRound){
-        blindBoxRoundReposity.save(blindBoxRound);
+        blindBoxRoundRepository.save(blindBoxRound);
     }
 
     List<BlindBoxRound> getRoundList() {
-        return blindBoxRoundReposity.findAll();
+        return blindBoxRoundRepository.findAll();
     }
 }

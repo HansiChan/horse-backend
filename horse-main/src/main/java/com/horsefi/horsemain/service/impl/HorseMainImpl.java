@@ -28,7 +28,7 @@ public class HorseMainImpl implements HorseMainService {
     }
 
     @Override
-    public String getNftInfo(String algebra) {
+    public String getNftInfo(Integer algebra) {
         return nftImpl.getNftInfo(algebra);
     }
 

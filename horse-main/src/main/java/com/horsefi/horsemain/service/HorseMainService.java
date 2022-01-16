@@ -9,7 +9,7 @@ public interface HorseMainService {
 
     void saveBlindBox(BlindBox blindBox) throws Exception;
 
-    String getNftInfo(String algebra);
+    String getNftInfo(Integer algebra);
 
     void saveBlindBoxRound(BlindBoxRound blindBoxRound);
 

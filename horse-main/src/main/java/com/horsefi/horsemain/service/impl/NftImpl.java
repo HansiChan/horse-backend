@@ -15,7 +15,7 @@ public class NftImpl {
         this.nftRepository = nftRepository;
     }
 
-    String getNftInfo(String algebra) {
+    String getNftInfo(Integer algebra) {
         NFT nftInfo = nftRepository.findById(algebra).orElseGet(NFT::new);
         return nftInfo.toString();
     }

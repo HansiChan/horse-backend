@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BlindBoxRoundRepository extends JpaRepository<BlindBoxRound, String> {
+public interface BlindBoxRoundRepository extends JpaRepository<BlindBoxRound, Integer> {
 }

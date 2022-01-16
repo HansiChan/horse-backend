@@ -21,7 +21,7 @@ import java.util.Objects;
 @Service
 public class BlindBoxImpl {
 
-    private final BlindBoxRepository blindBoxReposity;
+    private final BlindBoxRepository blindBoxRepository;
     private final RestTemplate restTemplate;
 
     @Value("${config.contract}")
@@ -30,8 +30,8 @@ public class BlindBoxImpl {
     private String apiUrl;
 
     @Autowired
-    public BlindBoxImpl(BlindBoxRepository blindBoxReposity, RestTemplateBuilder builder) {
-        this.blindBoxReposity = blindBoxReposity;
+    public BlindBoxImpl(BlindBoxRepository blindBoxRepository, RestTemplateBuilder builder) {
+        this.blindBoxRepository = blindBoxRepository;
         this.restTemplate = builder.build();
     }
 
@@ -56,10 +56,10 @@ public class BlindBoxImpl {
                     blindBox.getTransaction_hash() +
                     " does not related to a tokenId,please confirm!");
         }
-        blindBoxReposity.save(blindBox);
+        blindBoxRepository.save(blindBox);
     }
 
     List<BlindBox> getTransaction() {
-        return blindBoxReposity.findAll();
+        return blindBoxRepository.findAll();
     }
 }
