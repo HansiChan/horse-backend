@@ -1,7 +1,7 @@
 package com.horsefi.horsemain.service.impl;
 
 import com.horsefi.horsemain.entity.BlindBoxRound;
-import com.horsefi.horsemain.service.BlindBoxRoundReposity;
+import com.horsefi.horsemain.service.BlindBoxRoundRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,10 +9,10 @@ import java.util.List;
 
 @Service
 public class BlindBoxRoundImpl {
-    private final BlindBoxRoundReposity blindBoxRoundReposity;
+    private final BlindBoxRoundRepository blindBoxRoundReposity;
 
     @Autowired
-    public BlindBoxRoundImpl(BlindBoxRoundReposity blindBoxRoundReposity) {
+    public BlindBoxRoundImpl(BlindBoxRoundRepository blindBoxRoundReposity) {
         this.blindBoxRoundReposity = blindBoxRoundReposity;
     }
 

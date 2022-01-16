@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.horsefi.horsemain.entity.BlindBox;
-import com.horsefi.horsemain.service.BlindBoxReposity;
+import com.horsefi.horsemain.service.BlindBoxRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -21,7 +21,7 @@ import java.util.Objects;
 @Service
 public class BlindBoxImpl {
 
-    private final BlindBoxReposity blindBoxReposity;
+    private final BlindBoxRepository blindBoxReposity;
     private final RestTemplate restTemplate;
 
     @Value("${config.contract}")
@@ -30,7 +30,7 @@ public class BlindBoxImpl {
     private String apiUrl;
 
     @Autowired
-    public BlindBoxImpl(BlindBoxReposity blindBoxReposity, RestTemplateBuilder builder) {
+    public BlindBoxImpl(BlindBoxRepository blindBoxReposity, RestTemplateBuilder builder) {
         this.blindBoxReposity = blindBoxReposity;
         this.restTemplate = builder.build();
     }

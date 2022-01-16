@@ -27,7 +27,6 @@ create table blind_box
     ENGINE = InnoDB
     DEFAULT CHARSET = utf8;
 
-set @@explicit_defaults_for_bigint = 1;
 create table blind_box_round
 (
     id             INT UNSIGNED AUTO_INCREMENT,
